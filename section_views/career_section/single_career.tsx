@@ -119,7 +119,6 @@ const SingleCareer: FC<CareerProps> = ({ career }) => {
         setDetailStatus(isDetailsOpen ? false : true)
     }
     const renderRows = (responsibility: string) => {
-        console.log(career)
         return (
             <RowContainer>
                 <BsArrowReturnRight
