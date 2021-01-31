@@ -12,7 +12,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 `
-
 const Card = styled.div`
 width: 100%;
 background-color: white;
@@ -22,6 +21,9 @@ display: flex;
 flex-direction: column;
 align-items: center;
 border-radius: 10px;
+@media (max-width: 767px) {
+   padding: 30px 0;
+}
 `
 const TitleRow = styled.div`
 width: 100%;
@@ -45,7 +47,7 @@ justify-content: center;
 
 const TechStackMain = () => {
 
-    let techStacks : Array<String> = [
+    let techStacks: Array<String> = [
         "Dart",
         "Flutter",
         "Javascript",
@@ -80,12 +82,12 @@ const TechStackMain = () => {
                 />
                 <TechStacksContainer>
                     {
-                        techStacks.map((techStack)=>
-                        <SingleTechStack
-                        text={techStack}
-                        />
+                        techStacks.map((techStack) =>
+                            <SingleTechStack
+                                text={techStack}
+                            />
                         )
-                    }     
+                    }
                 </TechStacksContainer>
             </Card>
         </MainDiv>

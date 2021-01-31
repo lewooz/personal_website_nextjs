@@ -1,7 +1,6 @@
-import styled from 'styled-components'
+
 import React from 'react';
-import SizedBox from '../../components/sized_box';
-import AppColors from '../../utils/colors';
+
 import DartLogo from '../../public/static/tech_logos/dart.svg';
 import FlutterLogo from '../../public/static/tech_logos/flutter.svg';
 import JavascriptLogo from '../../public/static/tech_logos/javascript.svg';
@@ -13,13 +12,18 @@ import OneSignalLogo from '../../public/static/tech_logos/onesignal.svg';
 import Swift from '../../public/static/tech_logos/swift.svg';
 import Java from '../../public/static/tech_logos/java.svg';
 import Kotlin from '../../public/static/tech_logos/kotlin.svg';
+import AndroidLogo from '../../public/static/tech_logos/android_logo.svg';
+import FlutterNoTextLogo from '../../public/static/tech_logos/flutter_notext_logo.svg';
 
 
-const TechLogo = ({ logo = "", size= 70 }) => {
+
+const TechLogo = ({ logo = "", size = 70 }) => {
 
 
     const renderLogo = () => {
+
         switch (logo.toLowerCase()) {
+
             case "dart":
                 return (
                     <DartLogo
@@ -86,7 +90,18 @@ const TechLogo = ({ logo = "", size= 70 }) => {
                         style={{ width: `${size}px`, maxHeight: `${size}px` }}
                     />
                 )
-
+            case "android":
+                return (
+                    <AndroidLogo
+                        style={{ width: `${size}px`, maxHeight: `${size}px` }}
+                    />
+                )
+            case "flutternotext":
+                return (
+                    <FlutterNoTextLogo
+                        style={{ width: `${size}px`, maxHeight: `${size}px` }}
+                    />
+                )
 
             default:
                 break;
