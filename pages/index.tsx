@@ -15,14 +15,70 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 import LanguagesMain from '../section_views/languages_section/languages_main'
 import Footer from '../section_views/footer_section/footer_main'
+import Cursor from '../components/cursor'
 
 
 export default function Home() {
+
+  const personalRef = React.useRef(null)
+  const educationRef = React.useRef(null)
+  const careerRef = React.useRef(null)
+  const developerRef = React.useRef(null)
+  const projectsRef = React.useRef(null)
+  const techStackRef = React.useRef(null)
+  const coursesRef = React.useRef(null)
+  const hobbiesRef = React.useRef(null)
+  const languagesRef = React.useRef(null)
+  const headerRef = React.useRef(null)
+
 
   const Dragged = dynamic(
     () => import('../section_views/draggable_fab/draggable_fab'),
     { ssr: false },
   )
+  const onMenuItemClicked = (text) => {
+
+    switch (text.toLowerCase()) {
+      case "developer":
+        scrollToView(developerRef)
+        break;
+      case "education":
+        scrollToView(educationRef)
+        break;
+      case "career":
+        scrollToView(careerRef)
+        break;
+      case "tech stack":
+        scrollToView(techStackRef)
+        break;
+      case "courses taken":
+        scrollToView(coursesRef)
+        break;
+      case "hobbies":
+        scrollToView(hobbiesRef)
+        break;
+      case "languages":
+        scrollToView(languagesRef)
+        break;
+      case "applications":
+        scrollToView(projectsRef)
+        break;
+      case "personal info":
+        scrollToView(personalRef)
+        break;
+      case "home":
+        scrollToView(headerRef)
+        break;
+      default:
+        break;
+    }
+  }
+
+  const scrollToView = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
 
   return (
     <div className={styles.container} style={{ backgroundColor: AppColors.BG_COLOR, position: "relative" }}>
@@ -30,19 +86,62 @@ export default function Home() {
         <title>Levent Özkan</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div
+      ref={headerRef}
+      >
       <Header />
-      <PersonalMain />
-      <EducationMain />
-      <CareerMain />
-      <DeveloperMain />
-      <MyProjectsMain />
-      <TechStackMain />
-      <CoursesMain />
-      <HobbiesMain />
-      <LanguagesMain />
-      <Dragged />
-      <Footer />
+      </div>
+      <div
+        ref={personalRef}
+      >
+        <PersonalMain />
+      </div>
+      <div
+        ref={educationRef}
+      >
+        <EducationMain />
+      </div>
+      <div
+        ref={careerRef}
+      >
+        <CareerMain />
+      </div>
+      <div
+        ref={developerRef}
+      >
+        <DeveloperMain />
+      </div>
+      <div
+        ref={projectsRef}
+      >
+        <MyProjectsMain />
+      </div>
+      <div
+        ref={techStackRef}
+      >
+        <TechStackMain />
+      </div>
+      <div
+        ref={coursesRef}
+      >
+        <CoursesMain />
+      </div>
+      <div
+        ref={hobbiesRef}
+      >
+        <HobbiesMain />
+      </div>
+      <div
+        ref={languagesRef}
+      >
+        <LanguagesMain />
+      </div>
 
+      <Dragged
+        onmenuitemclicked={(text) => onMenuItemClicked(text)}
+      />
+      <Cursor/>
+      <Footer />
 
       <style jsx global>{`
         html,
@@ -50,6 +149,7 @@ export default function Home() {
     padding: 0;
     margin: 0;
     font-family: Poppins;
+    cursor: none;
   }
 
   * {
