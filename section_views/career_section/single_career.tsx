@@ -8,17 +8,14 @@ import CareerModel from '../../models/career_model';
 
 const MainDiv = styled.div`
 width: 100%;
-
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: flex-start;
-@media (max-width: 767px) {
-   padding: 50px 0;
-}
+
 `
 const TitleText = styled.text`
-width: 8%;
+max-width: 33px;
 font-size: 14px;
 font-style: italic;
 color: white;
@@ -71,10 +68,16 @@ align-items: flex-start;
 const Title = styled.text`
 font-size: 24px;
 color: white;
+@media (max-width: 767px) {
+    font-size: 20px;
+}
 `
 const SubTitle = styled.text`
 font-size: 14px;
 color: white;
+@media (max-width: 767px) {
+    font-size: 10px;
+}
 `
 const WhiteBall = styled.div`
 width: 18px;
@@ -107,6 +110,9 @@ const RowText = styled.text`
 color: white;
 font-size: 14px;
 `
+const StyledIcon = styled(BsArrowReturnRight)`
+flex-shrink: 0;
+`
 
 interface CareerProps {
     career: CareerModel,
@@ -121,7 +127,7 @@ const SingleCareer: FC<CareerProps> = ({ career }) => {
     const renderRows = (responsibility: string) => {
         return (
             <RowContainer>
-                <BsArrowReturnRight
+                <StyledIcon
                     color={"white"}
                     size={"30px"}
                 />
@@ -170,7 +176,6 @@ const SingleCareer: FC<CareerProps> = ({ career }) => {
                         </BottomListContainer>
                         : null
                 }
-
                 <WhiteBall />
             </CareerInfoContainer>
         </MainDiv>

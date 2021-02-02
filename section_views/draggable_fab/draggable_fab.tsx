@@ -43,7 +43,7 @@ align-items: center;
 flex-shrink: 0;
 z-index: 6;
 `
-const DraggableDenem = styled(Draggable)`
+const StyledDraggable = styled(Draggable)`
 
 `
 const AnimatedDenem = styled(Animated)`
@@ -88,7 +88,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
     }
 
     return (
-        <DraggableDenem
+        <StyledDraggable
             bounds={"parent"}
             onDrag={onDrag}
             onStop={onDragStop}
@@ -245,7 +245,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                 </AnimatedDenem>
 
             </MainDiv>
-        </DraggableDenem>
+        </StyledDraggable>
     )
 }
 

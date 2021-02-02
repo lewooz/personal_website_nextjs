@@ -15,7 +15,6 @@ import dynamic from 'next/dynamic'
 import React from 'react'
 import LanguagesMain from '../section_views/languages_section/languages_main'
 import Footer from '../section_views/footer_section/footer_main'
-import Cursor from '../components/cursor'
 
 
 export default function Home() {
@@ -140,7 +139,6 @@ export default function Home() {
       <Dragged
         onmenuitemclicked={(text) => onMenuItemClicked(text)}
       />
-      <Cursor/>
       <Footer />
 
       <style jsx global>{`
@@ -149,7 +147,7 @@ export default function Home() {
     padding: 0;
     margin: 0;
     font-family: Poppins;
-    cursor: none;
+ 
   }
 
   * {

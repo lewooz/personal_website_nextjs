@@ -61,9 +61,7 @@ const PersonalMain = () => {
                     title={"My Mail Address"}
                     alignSelf={"flex-end"}
                 />
-                <SizedBox
-                height={"20px"}
-                />
+               
                 <FlippingCard
                     frontImageLink={"/static/images/birth_date_front.png"}
                     backImageLink={"/static/images/birth_date_back.png"}
