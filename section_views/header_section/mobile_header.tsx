@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import SizedBox from '../../components/sized_box'
 import AppColors from '../../utils/colors'
 
 
@@ -10,102 +11,109 @@ align-items: center;
 flex-direction: column;
 `
 const TextContainer = styled.div`
-width: 33.33%;
 display: flex;
 flex-direction: column;
 align-items: center;
 `
 const TitleText = styled.text`
-font-size: 50px;
+font-size: 24px;
 font-weight: 600;
 color: white;
 text-align: center;
 `
 const SubTitleText = styled.text`
-font-size: 26px;
+font-size: 18px;
 font-weight: 600;
 color: white;
 text-align: center;
 `
 const ProfilePic = styled.div`
-width: 400px;
-height: 400px;
+width: 200px;
+height: 200px;
 border-radius: 50%;
-border: 8px solid ${AppColors.PRIMARY_COLOR};
+border: 4px solid ${AppColors.PRIMARY_COLOR};
 background-image: url("/static/images/levent_profile_photo.jpg");
 position: absolute;
-bottom: -200px;
-left: calc(100vw/2 - 200px);
+bottom: -100px;
+left: calc(100vw/2 - 100px);
 background-size: contain;
 background-position: center;
+`
+const BottomIconsContainer = styled.div`
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
 `
 
 const MobileHeader = () => {
 
     return (
         <>
-           {/*  <EqualContainer>
-                <svg width="486" height="176.338" viewBox="0 0 486 176.338">
-                    <defs>
-                        <clipPath id="clip-path">
-                            <path id="Path_2" data-name="Path 2" d="M147.083,82.173,99.616,129.658l47.467,47.484H92.842L72.487,156.787,45.358,129.658,92.842,82.173ZM92.842.8,4.682,88.964l27.129,27.129L147.083.8H92.842Z" transform="translate(-4.682 -0.804)" />
-                        </clipPath>
-                        <linearGradient id="linear-gradient" x1="-89.486" y1="-632.996" x2="-87.478" y2="-635.974" gradientUnits="objectBoundingBox">
-                            <stop offset="0" stop-color="#fff" stop-opacity="0.4" />
-                            <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                        </linearGradient>
-                        <radialGradient id="radial-gradient" cx="-27.315" cy="-8.995" r="0.047" gradientTransform="translate(-57.238) scale(1.238 1)" gradientUnits="objectBoundingBox">
-                            <stop offset="0" stop-color="#fff" stop-opacity="0.102" />
-                            <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                        </radialGradient>
-                    </defs>
-                    <g id="flutter-seeklogo.com" transform="translate(-4.121 -8.966)">
-                        <g id="Group_11" data-name="Group 11" transform="translate(4.121 8.966)">
-                            <g id="Group_2" data-name="Group 2" transform="translate(0 0)">
-                                <g id="Group_1" data-name="Group 1" clip-path="url(#clip-path)">
-                                    <path id="Path_1" data-name="Path 1" d="M41.1,94.023l74.6-74.613H61.454L13.987,66.894Z" transform="translate(26.707 61.96)" fill="#39cefd" />
-                                </g>
+            <svg width="314" viewBox="0 0 486 176.338">
+                <defs>
+                    <clipPath id="clip-path">
+                        <path id="Path_2" data-name="Path 2" d="M147.083,82.173,99.616,129.658l47.467,47.484H92.842L72.487,156.787,45.358,129.658,92.842,82.173ZM92.842.8,4.682,88.964l27.129,27.129L147.083.8H92.842Z" transform="translate(-4.682 -0.804)" />
+                    </clipPath>
+                    <linearGradient id="linear-gradient" x1="-89.486" y1="-632.996" x2="-87.478" y2="-635.974" gradientUnits="objectBoundingBox">
+                        <stop offset="0" stop-color="#fff" stop-opacity="0.4" />
+                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </linearGradient>
+                    <radialGradient id="radial-gradient" cx="-27.315" cy="-8.995" r="0.047" gradientTransform="translate(-57.238) scale(1.238 1)" gradientUnits="objectBoundingBox">
+                        <stop offset="0" stop-color="#fff" stop-opacity="0.102" />
+                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                    </radialGradient>
+                </defs>
+                <g id="flutter-seeklogo.com" transform="translate(-4.121 -8.966)">
+                    <g id="Group_11" data-name="Group 11" transform="translate(4.121 8.966)">
+                        <g id="Group_2" data-name="Group 2" transform="translate(0 0)">
+                            <g id="Group_1" data-name="Group 1" clip-path="url(#clip-path)">
+                                <path id="Path_1" data-name="Path 1" d="M41.1,94.023l74.6-74.613H61.454L13.987,66.894Z" transform="translate(26.707 61.96)" fill="#39cefd" />
                             </g>
-                            <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
-                                <g id="Group_3" data-name="Group 3" clip-path="url(#clip-path)">
-                                    <path id="Path_3" data-name="Path 3" d="M4.682,88.964,92.842.8h54.241L31.811,116.093Z" transform="translate(-4.682 -0.804)" fill="#39cefd" />
-                                </g>
-                            </g>
-                            <g id="Group_6" data-name="Group 6" transform="translate(0 0)">
-                                <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
-                                    <path id="Path_5" data-name="Path 5" d="M40.542,77.735H94.783L47.315,30.268,20.186,57.4Z" transform="translate(47.619 98.586)" fill="#03569b" />
-                                </g>
-                            </g>
-                            <g id="Group_8" data-name="Group 8" transform="translate(0 0)">
-                                <g id="Group_7" data-name="Group 7" clip-path="url(#clip-path)">
-                                    <path id="Path_7" data-name="Path 7" d="M47.315,30.268,20.186,57.4,60.421,43.459Z" transform="translate(47.619 98.586)" fill="url(#linear-gradient)" />
-                                </g>
-                            </g>
-                            <g id="Group_10" data-name="Group 10" transform="translate(0 0)">
-                                <g id="Group_9" data-name="Group 9" clip-path="url(#clip-path)">
-                                    <path id="Path_9" data-name="Path 9" d="M13.987,51.19,41.116,24.061,68.245,51.19,41.116,78.336Z" transform="translate(26.707 77.647)" fill="#16b9fd" />
-                                </g>
-                            </g>
-                            <path id="Path_11" data-name="Path 11" d="M147.083,82.173,99.616,129.658l47.467,47.484H92.842L72.487,156.787,45.358,129.658,92.842,82.173ZM92.842.8,4.682,88.964l27.129,27.129L147.083.8H92.842Z" transform="translate(-4.682 -0.804)" fill="url(#radial-gradient)" />
                         </g>
-                        <g id="Group_12" data-name="Group 12" transform="translate(163.695 56.23)">
-                            <path id="Path_12" data-name="Path 12" d="M42.549,20.809H90.087v9.055H52.51v28.07H86.465v9.055H52.51V102.3H43V20.809Z" transform="translate(-42.549 -20.809)" fill="#fff" />
-                            <path id="Path_13" data-name="Path 13" d="M56.008,20.809h9.508v81.946H56.008Z" transform="translate(2.849 -20.809)" fill="#fff" />
-                            <path id="Path_14" data-name="Path 14" d="M83.123,86.407c-7.244,0-12.224-2.264-16.3-6.338-3.622-4.075-5.433-9.96-5.433-17.2V26.192H70.9V61.506c0,5.433,1.358,9.508,3.622,12.224A13.639,13.639,0,0,0,84.933,77.8a13.931,13.931,0,0,0,8.6-2.716A16.922,16.922,0,0,0,99.421,68.3a20.608,20.608,0,0,0,2.264-9.055V26.192h9.508V84.6h-9.055v-8.6h-.453a19.9,19.9,0,0,1-7.7,7.244A18.048,18.048,0,0,1,83.123,86.407Z" transform="translate(21.008 -2.65)" fill="#fff" />
-                            <path id="Path_15" data-name="Path 15" d="M102.428,98.073a18.166,18.166,0,0,1-6.791-1.358,18.694,18.694,0,0,1-4.98-3.169,20.1,20.1,0,0,1-3.622-4.98,15.119,15.119,0,0,1-1.358-6.791V47.366H75.263v-8.6H85.676v-16.3h9.508v16.3h14.035v8.6H95.184V79.058c0,3.169.453,5.433,1.811,7.244a7.6,7.6,0,0,0,6.338,2.716,10.4,10.4,0,0,0,6.338-1.811v9.508c-1.358.453-2.264.905-3.622,1.358Z" transform="translate(67.803 -15.221)" fill="#fff" />
-                            <path id="Path_16" data-name="Path 16" d="M111.15,98.073a18.166,18.166,0,0,1-6.791-1.358,18.694,18.694,0,0,1-4.98-3.169,20.1,20.1,0,0,1-3.622-4.98A15.118,15.118,0,0,1,94.4,81.774V47.366H84.891v-8.6H95.3v-16.3h9.508v16.3h14.035v8.6H104.812V79.058c0,3.169.453,5.433,1.811,7.244a7.6,7.6,0,0,0,6.338,2.716,10.394,10.394,0,0,0,6.338-1.811v9.508c-1.358.453-2.264.905-3.622,1.358Z" transform="translate(100.28 -15.221)" fill="#fff" />
-                            <path id="Path_17" data-name="Path 17" d="M123.081,87.454a28.5,28.5,0,0,1-14.94-4.075A29.966,29.966,0,0,1,97.727,72.514a35.517,35.517,0,0,1-3.622-15.846,35.016,35.016,0,0,1,3.622-15.393,30.124,30.124,0,0,1,9.96-11.319q6.112-4.075,14.94-4.075t14.94,4.075a26.383,26.383,0,0,1,9.508,10.413A33.574,33.574,0,0,1,150.7,55.762a6.713,6.713,0,0,1-.453,3.169H103.613a27.725,27.725,0,0,0,3.169,11.319,17.269,17.269,0,0,0,7.244,6.791,22.269,22.269,0,0,0,9.055,2.264c7.7,0,13.13-3.622,17.2-10.413l8.149,4.075c-2.716,4.527-5.886,8.6-10.413,11.319a33.327,33.327,0,0,1-14.94,3.169ZM139.832,50.33a15.03,15.03,0,0,0-2.264-7.244,19.329,19.329,0,0,0-5.886-6.338,17.218,17.218,0,0,0-9.96-2.716,16.033,16.033,0,0,0-11.771,4.527c-3.169,2.716-4.98,6.791-6.338,11.771Z" transform="translate(131.36 -3.697)" fill="#fff" />
-                            <path id="Path_18" data-name="Path 18" d="M109.531,27.24h9.055v9.508h.453c1.358-3.169,3.169-5.886,6.791-7.7a17.616,17.616,0,0,1,10.413-3.169,15.119,15.119,0,0,1,6.791,1.358V37.653a15.5,15.5,0,0,0-8.149-1.811,15.263,15.263,0,0,0-7.7,2.264,26.463,26.463,0,0,0-5.886,6.338,18.726,18.726,0,0,0-2.264,8.6v32.6h-9.508Z" transform="translate(183.393 -3.697)" fill="#fff" />
+                        <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
+                            <g id="Group_3" data-name="Group 3" clip-path="url(#clip-path)">
+                                <path id="Path_3" data-name="Path 3" d="M4.682,88.964,92.842.8h54.241L31.811,116.093Z" transform="translate(-4.682 -0.804)" fill="#39cefd" />
+                            </g>
                         </g>
+                        <g id="Group_6" data-name="Group 6" transform="translate(0 0)">
+                            <g id="Group_5" data-name="Group 5" clip-path="url(#clip-path)">
+                                <path id="Path_5" data-name="Path 5" d="M40.542,77.735H94.783L47.315,30.268,20.186,57.4Z" transform="translate(47.619 98.586)" fill="#03569b" />
+                            </g>
+                        </g>
+                        <g id="Group_8" data-name="Group 8" transform="translate(0 0)">
+                            <g id="Group_7" data-name="Group 7" clip-path="url(#clip-path)">
+                                <path id="Path_7" data-name="Path 7" d="M47.315,30.268,20.186,57.4,60.421,43.459Z" transform="translate(47.619 98.586)" fill="url(#linear-gradient)" />
+                            </g>
+                        </g>
+                        <g id="Group_10" data-name="Group 10" transform="translate(0 0)">
+                            <g id="Group_9" data-name="Group 9" clip-path="url(#clip-path)">
+                                <path id="Path_9" data-name="Path 9" d="M13.987,51.19,41.116,24.061,68.245,51.19,41.116,78.336Z" transform="translate(26.707 77.647)" fill="#16b9fd" />
+                            </g>
+                        </g>
+                        <path id="Path_11" data-name="Path 11" d="M147.083,82.173,99.616,129.658l47.467,47.484H92.842L72.487,156.787,45.358,129.658,92.842,82.173ZM92.842.8,4.682,88.964l27.129,27.129L147.083.8H92.842Z" transform="translate(-4.682 -0.804)" fill="url(#radial-gradient)" />
                     </g>
-                </svg>
-            </EqualContainer>
+                    <g id="Group_12" data-name="Group 12" transform="translate(163.695 56.23)">
+                        <path id="Path_12" data-name="Path 12" d="M42.549,20.809H90.087v9.055H52.51v28.07H86.465v9.055H52.51V102.3H43V20.809Z" transform="translate(-42.549 -20.809)" fill="#fff" />
+                        <path id="Path_13" data-name="Path 13" d="M56.008,20.809h9.508v81.946H56.008Z" transform="translate(2.849 -20.809)" fill="#fff" />
+                        <path id="Path_14" data-name="Path 14" d="M83.123,86.407c-7.244,0-12.224-2.264-16.3-6.338-3.622-4.075-5.433-9.96-5.433-17.2V26.192H70.9V61.506c0,5.433,1.358,9.508,3.622,12.224A13.639,13.639,0,0,0,84.933,77.8a13.931,13.931,0,0,0,8.6-2.716A16.922,16.922,0,0,0,99.421,68.3a20.608,20.608,0,0,0,2.264-9.055V26.192h9.508V84.6h-9.055v-8.6h-.453a19.9,19.9,0,0,1-7.7,7.244A18.048,18.048,0,0,1,83.123,86.407Z" transform="translate(21.008 -2.65)" fill="#fff" />
+                        <path id="Path_15" data-name="Path 15" d="M102.428,98.073a18.166,18.166,0,0,1-6.791-1.358,18.694,18.694,0,0,1-4.98-3.169,20.1,20.1,0,0,1-3.622-4.98,15.119,15.119,0,0,1-1.358-6.791V47.366H75.263v-8.6H85.676v-16.3h9.508v16.3h14.035v8.6H95.184V79.058c0,3.169.453,5.433,1.811,7.244a7.6,7.6,0,0,0,6.338,2.716,10.4,10.4,0,0,0,6.338-1.811v9.508c-1.358.453-2.264.905-3.622,1.358Z" transform="translate(67.803 -15.221)" fill="#fff" />
+                        <path id="Path_16" data-name="Path 16" d="M111.15,98.073a18.166,18.166,0,0,1-6.791-1.358,18.694,18.694,0,0,1-4.98-3.169,20.1,20.1,0,0,1-3.622-4.98A15.118,15.118,0,0,1,94.4,81.774V47.366H84.891v-8.6H95.3v-16.3h9.508v16.3h14.035v8.6H104.812V79.058c0,3.169.453,5.433,1.811,7.244a7.6,7.6,0,0,0,6.338,2.716,10.394,10.394,0,0,0,6.338-1.811v9.508c-1.358.453-2.264.905-3.622,1.358Z" transform="translate(100.28 -15.221)" fill="#fff" />
+                        <path id="Path_17" data-name="Path 17" d="M123.081,87.454a28.5,28.5,0,0,1-14.94-4.075A29.966,29.966,0,0,1,97.727,72.514a35.517,35.517,0,0,1-3.622-15.846,35.016,35.016,0,0,1,3.622-15.393,30.124,30.124,0,0,1,9.96-11.319q6.112-4.075,14.94-4.075t14.94,4.075a26.383,26.383,0,0,1,9.508,10.413A33.574,33.574,0,0,1,150.7,55.762a6.713,6.713,0,0,1-.453,3.169H103.613a27.725,27.725,0,0,0,3.169,11.319,17.269,17.269,0,0,0,7.244,6.791,22.269,22.269,0,0,0,9.055,2.264c7.7,0,13.13-3.622,17.2-10.413l8.149,4.075c-2.716,4.527-5.886,8.6-10.413,11.319a33.327,33.327,0,0,1-14.94,3.169ZM139.832,50.33a15.03,15.03,0,0,0-2.264-7.244,19.329,19.329,0,0,0-5.886-6.338,17.218,17.218,0,0,0-9.96-2.716,16.033,16.033,0,0,0-11.771,4.527c-3.169,2.716-4.98,6.791-6.338,11.771Z" transform="translate(131.36 -3.697)" fill="#fff" />
+                        <path id="Path_18" data-name="Path 18" d="M109.531,27.24h9.055v9.508h.453c1.358-3.169,3.169-5.886,6.791-7.7a17.616,17.616,0,0,1,10.413-3.169,15.119,15.119,0,0,1,6.791,1.358V37.653a15.5,15.5,0,0,0-8.149-1.811,15.263,15.263,0,0,0-7.7,2.264,26.463,26.463,0,0,0-5.886,6.338,18.726,18.726,0,0,0-2.264,8.6v32.6h-9.508Z" transform="translate(183.393 -3.697)" fill="#fff" />
+                    </g>
+                </g>
+            </svg>
+            <SizedBox
+                height={"10px"}
+            />
             <TextContainer>
                 <TitleText>Levent Özkan</TitleText>
                 <SubTitleText>Senior Mobile & Web Application Developer</SubTitleText>
             </TextContainer>
-            <EqualContainer>
-                <svg version="1.1" id="Layer_2_1_" x="0px" y="0px" viewBox="0 0 841.9 595.3" enable-background="new 0 0 841.9 595.3" >
+            <BottomIconsContainer>
+                <svg version="1.1" id="Layer_2_1_" width={"140px"} viewBox="0 0 841.9 595.3" enable-background="new 0 0 841.9 595.3" >
                     <g>
                         <path fill="#FFFFFF" d="M666.3,296.5c0-32.5-40.7-63.3-103.1-82.4c14.4-63.6,8-114.2-20.2-130.4c-6.5-3.8-14.1-5.6-22.4-5.6v22.3
 		c4.6,0,8.3,0.9,11.4,2.6c13.6,7.8,19.5,37.5,14.9,75.7c-1.1,9.4-2.9,19.3-5.1,29.4c-19.6-4.8-41-8.5-63.5-10.9
@@ -136,12 +144,11 @@ const MobileHeader = () => {
                         <polygon fill="#FFFFFF" points="520.5,78.1 520.5,78.1 520.5,78.1 	" />
                     </g>
                 </svg>
-                <svg id="next-js-seeklogo.com" xmlns="http://www.w3.org/2000/svg" width="334" height="201.499" viewBox="0 0 334 201.499">
+                <svg id="next-js-seeklogo.com" xmlns="http://www.w3.org/2000/svg" width="140" viewBox="0 0 334 201.499">
                     <path id="Path_19" data-name="Path 19" d="M78.81,52.554h63v5.007H84.584V95.245h53.809v5.007H84.584v41.374h57.877v5.007H78.81Zm68.639,0h6.694L183.8,93.927l30.316-41.373L255.354,0,187.608,98.275l34.91,48.357h-6.956L183.8,102.623l-31.892,44.008h-6.824l35.172-48.357Zm77.563,5.007V52.554H296.8v5.007H263.728v89.071h-5.775V57.561ZM0,52.554H7.218L106.753,201.5,65.621,146.632,6.037,59.669l-.262,86.963H0Zm296.219,87.56a2.1,2.1,0,1,1,2.065-2.1A2.04,2.04,0,0,1,296.219,140.114Zm5.674-5.512h3.09a2.822,2.822,0,0,0,3.061,2.8c2.009,0,3.146-1.209,3.146-3.474V119.581h3.146V133.94c0,4.078-2.36,6.428-6.264,6.428C304.407,140.367,301.893,138.089,301.893,134.6Zm16.559-.183h3.118c.267,1.927,2.149,3.15,4.859,3.15,2.528,0,4.382-1.308,4.382-3.108,0-1.547-1.18-2.475-3.863-3.108l-2.613-.633c-3.666-.858-5.337-2.63-5.337-5.611,0-3.615,2.949-6.019,7.373-6.019,4.115,0,7.121,2.4,7.3,5.822h-3.062c-.295-1.87-1.924-3.038-4.283-3.038-2.486,0-4.144,1.2-4.144,3.024,0,1.449,1.067,2.279,3.708,2.9l2.233.549c4.157.971,5.871,2.658,5.871,5.71,0,3.881-3.005,6.315-7.809,6.315C321.7,140.367,318.677,138.046,318.452,134.418Z" fill="#fff" />
                 </svg>
-            </EqualContainer>
-            <ProfilePic /> */}
-            <div>ASDDDSAADDSASDASDASDADSADSAADASADADSDASDSADASASD</div>
+            </BottomIconsContainer>
+            <ProfilePic />
         </>
     )
 }

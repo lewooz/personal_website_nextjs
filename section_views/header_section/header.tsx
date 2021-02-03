@@ -30,6 +30,10 @@ width: 100%;
 const MobileContainer = styled.div`
 display: none;
 width: 100%;
+height: 100%;
+flex-direction: column;
+align-items: center;
+padding: 11px 25px;
 @media (max-width: 767px) {
     display: flex;
 }
@@ -39,10 +43,10 @@ const Header = () => {
     return (
         <MainDiv>
             <DesktopContainer>
-                <DesktopHeader/>
+                <DesktopHeader />
             </DesktopContainer>
             <MobileContainer>
-                <MobileHeader/>
+                <MobileHeader />
             </MobileContainer>
         </MainDiv>
     )
