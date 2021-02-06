@@ -33,7 +33,7 @@ width: 100%;
 height: 100%;
 flex-direction: column;
 align-items: center;
-padding: 11px 25px;
+padding: 11px 5px;
 @media (max-width: 767px) {
     display: flex;
 }

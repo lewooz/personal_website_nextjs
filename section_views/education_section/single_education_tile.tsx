@@ -1,15 +1,13 @@
 import styled from 'styled-components'
 import React from 'react';
-import SizedBox from '../../components/sized_box';
 import Image from 'next/image'
-import EducationModel from '../../models/education_model';
 
 const MainDiv = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
 @media (max-width: 767px) {
-   padding: 50px 0;
+   padding: 20px 0;
 }
 `
 const TextsContainer = styled.div`
@@ -29,22 +27,22 @@ font-weight: 600;
 color: white;
 `
 
-const SingleEducationTile = ({imageSrc = "", titleText = "", yearText = "" }) => {
+const SingleEducationTile = ({ imageSrc = "", titleText = "", yearText = "" }) => {
 
     return (
         <MainDiv>
             <Image
-            src={imageSrc}
-            width={50}
-            height={50}
+                src={imageSrc}
+                width={50}
+                height={50}
             />
             <TextsContainer>
                 <TitleText>
                     {titleText}
-              </TitleText>
+                </TitleText>
                 <YearText>
                     {yearText}
-              </YearText>
+                </YearText>
             </TextsContainer>
         </MainDiv>
     )

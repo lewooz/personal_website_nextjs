@@ -5,11 +5,11 @@ import AppColors from '../../utils/colors';
 
 const MainDiv = styled.div`
 width: 100%;
-height: 90vh;
+aspect-ratio: 4/3;
 position: relative;
 background-image: url(${props => props.image});
 background-repeat: no-repeat;
-background-size: contain;                 
+background-size: cover;                 
 background-position: center center;
 display: flex;
 align-items: center;
@@ -23,6 +23,7 @@ background-color: rgba(255,255,255,0.3);
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 row-gap: 10px;
 `
 const TitleText = styled.text`

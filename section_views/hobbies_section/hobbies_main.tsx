@@ -14,7 +14,6 @@ flex-direction: column;
 align-items: flex-start;
 align-items: center;
 background-color: ${AppColors.SECONDARY_COLOR};
-height: 120vh;
 @media (max-width: 767px) {
    padding: 50px 0;
 }
