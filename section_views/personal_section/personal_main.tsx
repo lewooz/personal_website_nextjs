@@ -10,8 +10,7 @@ display: flex;
 flex-direction: column;
 gap: 40px;
 @media (max-width: 767px) {
-    padding: 200px 0;
-    
+    padding: 200px 0;  
 }
 `
 const FlippingCardTopContainer = styled.div`
@@ -61,7 +60,7 @@ const PersonalMain = () => {
                     title={"My Mail Address"}
                     alignSelf={"flex-end"}
                 />
-               
+
                 <FlippingCard
                     frontImageLink={"/static/images/birth_date_front.png"}
                     backImageLink={"/static/images/birth_date_back.png"}

@@ -12,6 +12,9 @@ display: flex;
 flex-direction: column;
 gap: 40px;
 align-items: center;
+@media (max-width: 767px) {
+    padding: 50px 0;  
+}
 `
 const TitleRow = styled.div`
 width: 100%;

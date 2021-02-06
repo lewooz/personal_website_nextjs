@@ -65,6 +65,7 @@ const TechStackMain = () => {
         "Swift(IOS)",
         "Java(Android)",
         "Kotlin(Android)",
+        "AdobeXD"
     ]
 
     return (

@@ -14,7 +14,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { MdLanguage } from "react-icons/md";
 import { AiFillProject } from "react-icons/ai";
 import { FaUserCircle } from "react-icons/fa";
-
+import ReactTooltip from 'react-tooltip';
 
 const MainDiv = styled.div`
 width: 40px;
@@ -43,23 +43,39 @@ align-items: center;
 flex-shrink: 0;
 z-index: 6;
 `
+const MoveInfo = styled.div`
+position: absolute;
+top:-42px;
+padding: 10px;
+background-color:#EE4047;
+font-size: 14px;
+color: white;
+font-weight: 600;
+width: 171px;
+border-radius: 6px;
+left: -63px;
+`
 const StyledDraggable = styled(Draggable)`
 
 `
-const AnimatedDenem = styled(Animated)`
+const AnimatedDraggable = styled(Animated)`
 opacity: 1 !important;
 `
 
-const DraggableFab = ({onmenuitemclicked}) => {
+const DraggableFab = ({ onmenuitemclicked }) => {
     const [isAnimForwards, setAnimDirection] = React.useState(false)
     const lottieRef = React.useRef(null)
     const [isDragging, setDragStatus] = React.useState(true)
     const [isFabOpen, setFabStatus] = React.useState(false)
+    const [isTooltipVisible, setToolTipStatus] = React.useState(true)
 
     React.useEffect(() => {
         if (lottieRef) {
             lottieRef.current.stop()
         }
+        setTimeout(() => {
+            setToolTipStatus(false)
+        }, 2500);
     }, []);
 
     const onClick = () => {
@@ -92,16 +108,32 @@ const DraggableFab = ({onmenuitemclicked}) => {
             bounds={"parent"}
             onDrag={onDrag}
             onStop={onDragStop}
-            defaultPosition={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+            defaultPosition={{ x: window.innerWidth - 200, y: window.innerHeight / 2 }}
+            defaultClassName={"draggable"}
         >
             <MainDiv>
-                <AnimatedDenem
+                <AnimatedDraggable
                     animationIn="rubberBand"
                     animationOut={"bounce"}
                     isVisible={isFabOpen}
                     animateOnMount={false}
                 >
                     <RelativeDiv>
+                        {
+                            isTooltipVisible ?
+                                <AnimatedDraggable
+                                    animationIn="flash"
+                                    animationOut={"fadeOutRight"}
+                                    isVisible={isTooltipVisible}
+                                    animateOnMount={true}
+                                >
+                                    <MoveInfo>
+                                        DRAG TO MOVE MENU
+                            </MoveInfo>
+                                </AnimatedDraggable>
+                                :
+                                null
+                        }
                         <MenuCircle
                             key={1}
                             top={-30}
@@ -109,7 +141,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Home"}
                             tooltipPlacement={"top"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<AiFillHome
                                 size={17}
                                 color={"white"}
@@ -122,7 +154,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Developer"}
                             tooltipPlacement={"top"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<MdDeveloperMode
                                 size={17}
                                 color={"white"}
@@ -135,7 +167,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Education"}
                             tooltipPlacement={"top"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<FaGraduationCap
                                 size={17}
                                 color={"white"}
@@ -148,7 +180,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Career"}
                             tooltipPlacement={"top"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<AiFillSetting
                                 size={17}
                                 color={"white"}
@@ -161,7 +193,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Tech Stack"}
                             tooltipPlacement={"right"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<svg width="17pt" height="17pt" viewBox="0 0 35 35" version="1.1">
                                 <g id="surface1">
                                     <path fill={"white"} d="M 7.953125 18.183594 C 8.320312 18.171875 8.613281 17.871094 8.613281 17.5 C 8.613281 17.132812 8.320312 16.828125 7.953125 16.816406 C 7.945312 16.816406 7.9375 16.816406 7.929688 16.816406 C 7.550781 16.816406 7.246094 17.121094 7.246094 17.5 C 7.246094 17.878906 7.550781 18.183594 7.929688 18.183594 C 7.9375 18.183594 7.945312 18.183594 7.953125 18.183594 Z M 7.953125 18.183594 " />
@@ -177,7 +209,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Courses Taken"}
                             tooltipPlacement={"bottom"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<VscBroadcast
                                 size={17}
                                 color={"white"}
@@ -190,7 +222,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Hobbies"}
                             tooltipPlacement={"bottom"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<AiFillHeart
                                 size={17}
                                 color={"white"}
@@ -203,7 +235,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Languages"}
                             tooltipPlacement={"bottom"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<MdLanguage
                                 size={17}
                                 color={"white"}
@@ -216,7 +248,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Applications"}
                             tooltipPlacement={"bottom"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<AiFillProject
                                 size={17}
                                 color={"white"}
@@ -229,7 +261,7 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             isFabOpen={isFabOpen}
                             tooltipText={"Personal Info"}
                             tooltipPlacement={"left"}
-                            onclick={(text)=>onMenuItemClicked(text)}
+                            onclick={(text) => onMenuItemClicked(text)}
                             child={<FaUserCircle
                                 size={17}
                                 color={"white"}
@@ -242,9 +274,9 @@ const DraggableFab = ({onmenuitemclicked}) => {
                             autoPlay={false}
                         />
                     </RelativeDiv>
-                </AnimatedDenem>
-
+                </AnimatedDraggable>
             </MainDiv>
+
         </StyledDraggable>
     )
 }
