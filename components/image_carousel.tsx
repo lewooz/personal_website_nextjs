@@ -95,7 +95,7 @@ const ImageCarousel = ({ images, children, width, height, isdraggable, margintop
                 wrapAround
                 autoplay
                 dragging={isdraggable ?? true}
-                heightMode={"max"}
+
                 renderCenterLeftControls={({ previousSlide }) => (
                     <IoChevronBack
                         onClick={previousSlide}

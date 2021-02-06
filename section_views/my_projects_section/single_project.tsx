@@ -11,7 +11,8 @@ flex-direction: ${props => props.direction};
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-gap: 50px;
+gap: 0 50px;
+
 `
 const ImageContainer = styled.div`
 width: 400px;
