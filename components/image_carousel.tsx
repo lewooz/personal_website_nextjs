@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Carousel from 'nuka-carousel';
-import AppColors from '../utils/colors';
 import { IoChevronBack } from "react-icons/io5";
 import { IoChevronForward } from "react-icons/io5";
 
@@ -28,48 +27,6 @@ ul{
         margin-right : 0 !important;
     }
 }
-/* .paging-item{
-    margin-right: 5px;
-    display: ${props => props.showdots};
-    button{
-    width: 7px;
-    height: 7px;
-    background-color: white !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    padding: 0;
-    position:relative;
-    }
-    &.active{
-    button{
-    width: 7px;
-    height: 7px;
-    background-color: white !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    padding: 0;
-    ::before{
-        content: "";
-        border-radius: 50px;
-        width: 3px;
-        height: 3px;
-        background-color: ${AppColors.PRIMARY_COLOR};
-        position: absolute;
-        top:2px;
-        left:2px;
-        right: 0;
-        bottom: 0;
-    }
-    .paging-dot{
-        display: none;
-    }
-    }
-    }
-} */
 `
 
 const ImageCarousel = ({ images, children, width, height, isdraggable, margintop }) => {

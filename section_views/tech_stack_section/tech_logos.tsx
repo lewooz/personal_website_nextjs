@@ -14,6 +14,7 @@ import Java from '../../public/static/tech_logos/java.svg';
 import Kotlin from '../../public/static/tech_logos/kotlin.svg';
 import AndroidLogo from '../../public/static/tech_logos/android_logo.svg';
 import FlutterNoTextLogo from '../../public/static/tech_logos/flutter_notext_logo.svg';
+import AdobeXDLogo from '../../public/static/tech_logos/adobexd_logo.svg';
 
 
 
@@ -99,6 +100,12 @@ const TechLogo = ({ logo = "", size = 70 }) => {
             case "flutternotext":
                 return (
                     <FlutterNoTextLogo
+                        style={{ width: `${size}px`, maxHeight: `${size}px` }}
+                    />
+                )
+            case "adobexd":
+                return (
+                    <AdobeXDLogo
                         style={{ width: `${size}px`, maxHeight: `${size}px` }}
                     />
                 )
