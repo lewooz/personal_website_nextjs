@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import HobbyModel from '../../models/hobby_model';
 import AppColors from '../../utils/colors';
 
-const MainDiv = styled.div`
+const MainDiv = styled.div<{ image: string }>`
 width: 100%;
 aspect-ratio: 4/3;
 position: relative;
@@ -24,7 +24,6 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-row-gap: 10px;
 `
 const TitleText = styled.text`
 font-size: 30px;
@@ -39,6 +38,7 @@ const SubTitleText = styled.text`
 font-size: 25px;
 color: black;
 text-align: center;
+margin-top: 10px;
 @media (max-width: 767px) {
   font-size: 16px;
 }
@@ -47,6 +47,7 @@ const BottomText = styled.text`
 font-size: 14px;
 color: black;
 text-align: center;
+margin-top: 10px;
 @media (max-width: 767px) {
    font-size: 12px;
 }

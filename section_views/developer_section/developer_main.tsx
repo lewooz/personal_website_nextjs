@@ -33,7 +33,6 @@ width: 100%;
 background-color: #ECECE9;
 display: flex;
 flex-direction: column;
-row-gap: 30px;
 -webkit-border-radius: 20px;
 -webkit-border-top-left-radius: 0;
 -moz-border-radius: 20px;
@@ -44,6 +43,9 @@ border-top-left-radius: 0;
 const NormalText = styled.text`
 font-size: 18px;
 color: ${AppColors.SECONDARY_COLOR};
+&:not(:first-child){
+margin-top: 30px;
+}
 `
 const BoldSpan = styled.span`
 font-size: 18px;

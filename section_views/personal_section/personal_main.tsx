@@ -1,16 +1,15 @@
 import styled from 'styled-components'
 import React from 'react';
-import SizedBox from '../../components/sized_box';
 import FlippingCard from '../../components/flipping_card';
+import SizedBox from '../../components/sized_box';
 
 const MainDiv = styled.div`
 width: 100%;
 padding: 200px 200px;
 display: flex;
 flex-direction: column;
-gap: 40px;
 @media (max-width: 767px) {
-    padding: 200px 0;  
+    padding: 110px 0;  
 }
 `
 const FlippingCardTopContainer = styled.div`
@@ -19,10 +18,6 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 flex-wrap: wrap;
-@media (max-width: 767px) {
-    gap: 40px;
-    justify-content: center;
-}
 `
 const FlippingCardBottomContainer = styled.div`
 width: 100%;
@@ -30,10 +25,9 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 flex-wrap: wrap;
-gap: 40px;
+margin-top: 40px;
 @media (max-width: 767px) {
-    gap: 40px;
-    justify-content: center;
+    justify-content: space-between;
 }
 `
 
@@ -60,7 +54,9 @@ const PersonalMain = () => {
                     title={"My Mail Address"}
                     alignSelf={"flex-end"}
                 />
-
+                <SizedBox
+                    width={"20px"}
+                />
                 <FlippingCard
                     frontImageLink={"/static/images/birth_date_front.png"}
                     backImageLink={"/static/images/birth_date_back.png"}

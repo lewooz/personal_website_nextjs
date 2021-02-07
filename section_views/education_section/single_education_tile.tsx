@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 import React from 'react';
-import Image from 'next/image'
 
 const MainDiv = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+margin-top: 20px;
 @media (max-width: 767px) {
    padding: 20px 0;
 }
@@ -31,7 +31,7 @@ const SingleEducationTile = ({ imageSrc = "", titleText = "", yearText = "" }) =
 
     return (
         <MainDiv>
-            <Image
+            <img
                 src={imageSrc}
                 width={50}
                 height={50}

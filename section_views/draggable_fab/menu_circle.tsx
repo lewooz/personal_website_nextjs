@@ -33,7 +33,7 @@ type MenuCircleProps = {
     opacity: number
 };
 
-const MenuCircle = ({ top, left, isFabOpen, child, tooltipText="", tooltipPlacement, onclick }) => {
+const MenuCircle = ({ top, left, isFabOpen, child, tooltipText = "", tooltipPlacement, onclick }) => {
     const [showToolTip, setToolTipStatus] = React.useState(false)
 
     React.useEffect(() => {
@@ -49,6 +49,7 @@ const MenuCircle = ({ top, left, isFabOpen, child, tooltipText="", tooltipPlacem
             size={isFabOpen ? 30 : 0}
             opacity={isFabOpen ? 1 : 0}
             onClick={() => onclick(tooltipText)}
+            onTouchStart={() => onclick(tooltipText)}
         >
             <RelativeDiv data-tip data-for={tooltipText}>
                 {child}

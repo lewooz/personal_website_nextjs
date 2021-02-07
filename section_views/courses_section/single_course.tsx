@@ -17,6 +17,9 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
+&:not(:last-child){
+margin-bottom: 15px;
+}
 `
 const BGIconContainer = styled.div`
 position: absolute;
@@ -28,12 +31,12 @@ top: 5px;
 const CourseInfoContainer = styled.div`
 display: flex;
 flex-direction: column;
-row-gap: 10px;
 `
-const CourseInfoText = styled.text`
+const CourseInfoText = styled.text<{ marginTop?: string }>`
 font-size: 14px;
 font-weight: 700;
 color: ${AppColors.SECONDARY_COLOR};
+margin-top: ${props => props.marginTop};
 `
 const LaunchIcon = styled.div`
 position: relative;
@@ -62,7 +65,9 @@ const SingleCourse: FC<CourseProps> = ({ course }) => {
         <Card>
             <CourseInfoContainer>
                 <CourseInfoText>{course.yearText}</CourseInfoText>
-                <CourseInfoText>{course.titleText}</CourseInfoText>
+                <CourseInfoText
+                    marginTop={"10px"}
+                >{course.titleText}</CourseInfoText>
             </CourseInfoContainer>
             <LaunchIcon>
                 <MdLaunch

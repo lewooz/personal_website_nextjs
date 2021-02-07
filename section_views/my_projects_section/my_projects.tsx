@@ -12,7 +12,6 @@ padding: 50px 14.32vw;
 display: flex;
 flex-direction: column;
 align-items: flex-start;
-gap: 80px;
 `
 const TitleRow = styled.div`
 width: 100%;
@@ -37,7 +36,6 @@ const ExtraChildContainer = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-column-gap: 15px;
 position: relative;
 cursor: pointer;
 :hover svg{
@@ -53,9 +51,11 @@ transition: 0.5s all;
 `
 const StyledSvg = styled.svg`
 transition: 0.5s all;
+margin-left: 15px;
 `
 const StyledIcon = styled(BiRightArrow)`
 transition: 0.5s all;
+margin-left: 15px;
 `
 const FlutterWebLink = styled.a`
 position: absolute;
@@ -106,8 +106,8 @@ Github: https://github.com/locallyoncloud/localy-flutter`)
                                         Click to see Flutter version
                                     </GoFlutterText>
                                     <StyledIcon
-                                    color={"#00569E"}
-                                    size={25}
+                                        color={"#00569E"}
+                                        size={25}
                                     />
                                     <StyledSvg width="50px" viewBox="0 0 256 317" version="1.1" preserveAspectRatio="xMidYMid">
                                         <defs>

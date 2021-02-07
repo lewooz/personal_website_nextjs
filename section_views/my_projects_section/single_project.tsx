@@ -4,15 +4,16 @@ import AppColors from '../../utils/colors';
 import ProjectModel from '../../models/project_model';
 
 
-const MainDiv = styled.div`
+const MainDiv = styled.div<{ direction: string }>`
 width: 100%;
 display: flex;
 flex-direction: ${props => props.direction};
 flex-wrap: wrap;
 align-items: center;
 justify-content: center;
-gap: 0 50px;
-
+&:not(:last-child){
+margin-top: 15px;
+}
 `
 const ImageContainer = styled.div`
 width: 400px;
@@ -25,19 +26,19 @@ const ImageInfoContainer = styled.div`
 width: 500px;
 display: flex;
 flex-direction: column;
-row-gap: 10px;
 `
-const TitleText = styled.text`
+const TitleText = styled.text<{ align: string }>`
 font-size: 24px;
 color: ${AppColors.PRIMARY_COLOR};
 font-weight: 700;
 text-align: ${props => props.align};
 `
-const ContentText = styled.text`
+const ContentText = styled.text<{ align: string }>`
 font-size: 20px;
 color: ${AppColors.SECONDARY_COLOR};
 text-align: ${props => props.align};
 white-space: break-spaces;
+margin-top: 10px;
 `
 const StyledImage = styled.img`
 max-height: 600px;

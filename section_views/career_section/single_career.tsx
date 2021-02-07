@@ -88,11 +88,10 @@ position: absolute;
 top: 69px;
 left: -10px;
 `
-const BottomListContainer = styled.div`
+const BottomListContainer = styled.div<{ height: string }>`
 display: flex;
 flex-direction: column;
 overflow: hidden;
-row-gap: 20px;
 width: 100%;
 max-height: ${props => props.height};
 box-sizing: border-box;
@@ -103,12 +102,13 @@ margin-top: 10px;
 const RowContainer = styled.div`
 display: flex;
 flex-direction: row;
-column-gap: 20px;
 align-items: center;
+margin-top: 20px;
 `
 const RowText = styled.text`
 color: white;
 font-size: 14px;
+margin-left: 20px;
 `
 const StyledIcon = styled(BsArrowReturnRight)`
 flex-shrink: 0;

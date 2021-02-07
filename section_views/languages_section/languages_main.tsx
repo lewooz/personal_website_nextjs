@@ -10,7 +10,6 @@ width: 100%;
 padding: 50px 14.32vw;
 display: flex;
 flex-direction: column;
-gap: 40px;
 align-items: center;
 @media (max-width: 767px) {
     padding: 50px 0;  
@@ -64,7 +63,9 @@ const LanguagesMain = () => {
                 />
                 <TitleText>Languages I Speak</TitleText>
             </TitleRow>
-
+            <SizedBox
+                height={"30px"}
+            />
             <LanguagesRow>
                 <LanguageColumn>
                     <LanguageImg

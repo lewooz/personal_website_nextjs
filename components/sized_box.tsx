@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React from 'react';
 
-const StyledDiv = styled.div` 
+const StyledDiv = styled.div<TestProps>` 
 height: ${props => props.height ?? 0};
 width: ${props => props.width ?? 0};
 min-height: ${props => props.height ?? 0};
@@ -10,19 +10,19 @@ visibility: ${props => props.visibility};
 display: ${props => props.display};
 `
 interface TestProps {
-    height? : String, 
-    width?: String, 
-    visibility?: String, 
-    display?: String
+    height?: string,
+    width?: string,
+    visibility?: string,
+    display?: string
 }
 const defaultProps: TestProps = {
     height: "0px",
     width: "0px",
-    visibility:"visible",
+    visibility: "visible",
     display: 'flex'
 }
 
-const SizedBox = ( props = defaultProps ) => {
+const SizedBox = (props = defaultProps) => {
 
     return (
         <StyledDiv

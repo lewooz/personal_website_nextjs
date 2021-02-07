@@ -26,7 +26,9 @@ text-align: center;
 const SingleTechStack = ({ text }) => {
 
     return (
-        <MainDiv>
+        <MainDiv
+            className={"inner-div"}
+        >
             <TechLogo
                 logo={text}
             />
